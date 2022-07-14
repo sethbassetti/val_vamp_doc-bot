@@ -1,3 +1,395 @@
-<h2>
-    The index works.
-</h2>
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <script>
+          function validateForm() {
+            let x = document.form["form"]["prompt"].value;
+            checker = true
+            if x == "" {
+              alert("Please enter an answer")
+              return false
+            }
+            if checker == true {
+             document.getElementId("result").innerHTML("Bot not finished yet :\(")
+            }
+          }
+        </script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+      <title>DocBot</title>
+      <a rel="icon" type="image/gif/png" href="{{url_for('static', filename='AICampLogo.png')}}" alt="..." />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+          <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" id="mainNav" style="border-style: solid; background-color: #382C28;
+            border-color: #382C28; border-radius: 25px; width: 80%; margin: auto; justify-content: center;
+  align-items: center; top:2%;">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="{{url_for('static', filename='assets/img/VaLogo.png') }}" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"  color=#D4D2D5>
+                    Menu
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive" >
+
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#docbot" color=#D4D2D5>The DocBot</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#services" color=#D4D2D5>Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Behind The Scenes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#timeline" color=#D4D2D5>Timeline</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+                    </ul>
+            </div>
+        </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+        <div style="position:relative; top:-90px;">
+            <div class="container" id="docbot">
+                <div class="masthead-heading text-uppercase" style="color: #382C28; border-color: #BFAFA6">The DocBot</div>
+          <div style="position:relative; top:-35px;">
+                <div class="masthead-subheading" style="text-align:center; color:#382C28">Enter your question below!</div>
+              <form id="botForm" action="{{get_text}}" method="post">
+                <input type="text"  id="prompt" class="btn btn-primary btn-xl" name="prompt" style="background-color: #ebebeb; border-color: #382C28; border-radius: 25px; border-style: solid; text-align:start; color:#382C28;">
+                  <br><br>
+                <input type="submit" class="btn btn-primary btn-xl text-uppercase" style="background-color: #BA3F1D; color:#382C28; border-color: #BFAFA6;" value="Submit Question">
+                </form>
+
+             <div style="background: #ebebeb;
+            position:relative; top:30px;
+            height: 250px;
+            font-size: 20px;
+            padding: 1px;
+            border-style: solid;
+            border-color: #382C28;
+            border-radius: 25px;
+            margin: 0px;">
+               <p style="text-align:center; color:#382C28";  class="section-subheading span style='font-family:Cursive'"><br><strong>{{variable}}</strong></p>
+            </div>
+
+         </div>
+        </div>
+
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase" color=#382C28>Overview</h2>
+                    <h3 class="section-subheading"><span style='font-family:Monaco' color=#D4D2D5> The Creation of The DocBot.</span></h3>
+                </div>
+                <div class="row text-center"><span style='font-family:Comic Sans MS'>    </span>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x" style="color: red">
+                            <i class="fas fa-circle fa-stack-2x text-primary red" style="color: #BFAFA6"></i>
+                            <i class="fas fa-suitcase-medical fa-stack-1x fa-inverse" style="color: #BA3F1D"></i>
+                        </span>
+                        <h4 class="my-3">What is The DocBot?</h4>
+                        <p class="text-muted">We designed The DocBot with the sole purpose of helping individuals seek the professional care they may need for any physical or mental problems they may be experiencing.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary" style="color: #BFAFA6"></i>
+                            <i class="fas fa-laptop-medical fa-stack-1x fa-inverse"  style="color: #BA3F1D"></i>
+                        </span>
+                        <h4 class="my-3">What can The DocBot do for its users?</h4>
+                        <p class="text-muted">The DocBot will give individuals access to input their current problems into a text box, and from there the bot will process an output containing advice regarding what could be the cause of the user's symptoms, what could help lessen the severity of the user's conflict, and whether or not it is necessary to involve professional care.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary" style="color: #BFAFA6"></i>
+                            <i class="fas fa-heart-pulse fa-stack-1x fa-inverse"  style="color: #BA3F1D"></i>
+                        </span>
+                        <h4 class="my-3">What Are the Benefits of The DocBot?</h4>
+                        <p class="text-muted">The DocBot grants its users with a vast amount of benefits.For example, The DocBot provides an output containing information regarding what the possibilities of the input could be along with when it is necessary to involve professional medical care. Another Example would be how, in the case of a common cold, The DocBot's advice will not only be helpful for the user, but it will help avoid users from a vast payment to the medical center when faced with a conflict that is not severe. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Behind the Scenes</h2>
+                    <h3 class="section-subheading text-muted">The steps behind creating The DocBot</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{{url_for('static', filename='screenshots/ScreenShot1.png')}}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Dataset</div>
+                                <div class="portfolio-caption-subheading text-muted">Where Are We Getting Our Information?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{{url_for('static', filename='screenshots/trainingBot.png')}}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Training Our Model</div>
+                                <div class="portfolio-caption-subheading text-muted">Teaching Our Model Using Our Dataset</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3--><strong></strong>
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{{url_for('static', filename='screenshots/WebsiteCode.png')}}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Making The Website</div>
+                                <div class="portfolio-caption-subheading text-muted">A User Friendly Website Powered By DocBot</div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+        <!-- Timeline-->
+        <section class="page-section" id="timeline">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Timeline</h2>
+                    <h3 class="section-subheading text-muted">A timeline of what we did over 14 days to go from printing "Hello World!" to finishing The DocBot</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/Day_1.png') }}" width="156" height="156" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 1</h4>
+                                <h4 class="subheading">Began Learning Python</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Most of us had little to no Python experience starting this camp, so our first few days were spent teaching ourselves how to use Python, and learning about the basics of programming.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/Day_5.png') }}" width="156" height="156"  alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 5</h4>
+                                <h4 class="subheading">Finalized Project Idea</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">While learning the basics of Python, we brainstormed ideas for an artificial intelligence text generation tool. Originally we had considered making a fake news generator, a meme generator, an email writer, or a holiday card generator, but eventually we settled on our idea, a medical diagnosis and resource locator bot.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/Day_7.png') }}" width="156" height="156"  alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 7</h4>
+                                <h4 class="subheading">Trained a Model With GPT-2</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">After we planned our project and found a dataset that would fill our needs, we used GPT-2 and aitextgen to train a model from our dataset. Overall, we ended up training our model for a total of approximately 3 hours on the dataset.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/Day_11.png') }}"  width="156" height="156" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 11</h4>
+                                <h4 class="subheading">Began Web Design</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Now that we had a functional demo, we needed to present it. We learned how to use HTML, and found a template for our website on startbootstrap.com, and from this template we began learning front-end and back-end design and put it together so that we could how our</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/Day_12.png') }}"  width="156" height="156" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 12</h4>
+                                <h4 class="subheading">Switched to a GPT-3 Model</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">After using our GPT-2 Model for a few days, and our training plateaued, and we could no longer train the model to be any better, but we realized it still needed a lot of improvement, we decided to switch to GPT-3. While GPT-3 was always an option, we originally thought that having the ability to use aitextgen gave GPT-2 an advantage, but in the end GPT-3 was the best fit for our project.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/day13.png') }}"  width="156" height="156" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 13</h4>
+                                <h4 class="subheading">Completing The DocBot</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Whilst having a vast amount of our model already completed, we have come together in deciding what to do with the final touch ups of the website. Along with this, we are in the process of completing the training of our new model.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img src="{{url_for('static', filename='ATP/day14.png') }}"  width="156" height="156" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Day 14</h4>
+                                <h4 class="subheading">Presenting... The DocBot!</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">After having completed The DocBot, we have come together, on our last day of camp, to present the final product.</p></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Team</h2>
+                    <h3 class="section-subheading text-muted">The team behind The DocBot.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{url_for('static', filename='Team_Pics/Seth.png')}}" alt="..." />
+                            <h4>Seth Bassetti</h4>
+                            <p class="text-muted"> Second-year Master's Student with a passion for AI and the outdoors, living in the heart of Montana.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{url_for('static', filename='Team_Pics/Abby.png')}}" alt="..." />
+                            <h4>Abigail Smith</h4>
+                            <p class="text-muted">Rising senior in Ellicott City, Maryland. Artist, writer, runner, chronic overachiever, programmer?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{url_for('static', filename='Team_Pics/Shikha.png')}}" alt="..." />
+                            <h4>Shikha Banerjie</h4>
+                            <p class="text-muted">Hello, I am a rising junior from Cypress Texas. My hobbies include singing, drawing, and reading in my free time.</p>
+                        </div>
+                    </div>
+             
+       <div class="container" style="justify-content:center; display:flex">
+                                                 
+                                                
+                    <div class="col-lg-4">
+                      <div class="team-member">
+                        <img class="mx-auto rounded-circle"
+src="{{url_for('static', filename='Team_Pics/Eli.png')}}" alt="..." />
+                            <h4>Eli Dubizh</h4>
+                            <p class="text-muted"> Rising senior from New York City with a dog named Louie </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle"
+src="{{url_for('static', filename='Team_Pics/Teddy.png')}}" alt="..." />
+                            <h4>Theodore Sopchak</h4>
+                            <p class="text-muted">Rising junior, programmer, ultimate frisbee player, pro stick figure</p>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{url_for('static', filename='assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Dataset</h2>
+                                    <p class="item-intro text-muted">with the help of doctor-patient responses...</p>                    <div class="container">
+                                  
+                                  
+                                    <p>Our data set consists of over 250 thousand logged patient-doctor responses. Included are questions ranging from a broken bone to a small headache. Such a large amount of data helps our AI produce a more accurate response! We used Kaggle.com to find our dataset, which was a json file which we converted to csv after some file work. We did this by making headers "prompt" and "completion" and adding the prompts and completions under it. Finally we fed it into the finetuning commands in openai to create a usable file for the bot to train on.
+                                   </p>
+                                  
+                                  <a href="https://www.kaggle.com/datasets/dsxavier/diagnoise-me" style="color: #BA3F1D">Visit Kaggle!</a>
+                                  </div>
+                                  <br>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1" style="color: #382C28" ></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{url_for('static', filename='assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Training Our Model</h2>
+                                    <p class="item-intro text-muted">teaching our GPT-2 Model</p>
+                                    <p>Using our pre-processed dataset and feeding the information to our AI model we waited for it to generate its own text from a user's question. Although it may be a simpler model, the GPT-2 "124M" model processed our data in a short time frame allowing us to begin working on our website. To further improve our model, we choose to fine tune a GPT-3 AI model. This model includes more parameters for the AI to learn from as well as a larger variety of stored topics to help our DocBot.</p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1" style="color: #382C28; border-color: #382C28; background-color: #382C28"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{url_for('static', filename='assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Making The Website</h2>
+                                    <p class="item-intro text-muted">a balance between HTML, CSS, Python, and JavaScript</p>
+                                    <p>We created our website with HTML and included specific styling with CSS. This would be the front-end of the website. To incorporate our trained AI model into a user friendly The DocBot we used Flask and a series of its libraries. With a bit of JavaScript as well, The DocBot was fully ready for use.</p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1" style="color: #382C28"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    </body>
+</html>
+
+          <!-- rip Kahlil and Rachel -->
