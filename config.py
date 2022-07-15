@@ -10,4 +10,4 @@ timeout = int(os.environ.get('TIMEOUT', 120))
 access_log_format = '%(h)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" "%({X-Forwarded-For}i)s" "%({X-Forwarded-Port}i)s" "%({X-Forwarded-Proto}i)s"  "%({X-Amzn-Trace-Id}i)s"'
 max_requests = int(os.environ.get('MAX_REQUESTS', 16384))
 limit_request_line = int(os.environ.get('LIMIT_REQUEST_LINE', 8190))
-keepalive = int(os.environ.get('KEEPALIVE', 60))
+keepalive = int(os.environ.get('KEEPALIVE', 60))r

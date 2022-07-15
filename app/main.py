@@ -6,7 +6,7 @@ import openai
 import os
 
 
-openai.api_key = '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'
+openai.api_key = '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'
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
 port = 8000
@@ -25,7 +25,7 @@ else:
 @app.route(f'{base_url}')
 def home():
     x = "Hello"
-    return render_template('index.html', variable="")
+    return render_template('index.html', variable="", prompt="")
 
 @app.route(f'{base_url}', methods=['POST'])
 def get_text():
@@ -41,7 +41,7 @@ def get_text():
     )
     
     text = aiText["choices"][0]["text"]
-    return render_template('index.html', variable=text)
+    return render_template('index.html', variable=text, prompt=prompt)
 
 # define additional routes here
 # for example:

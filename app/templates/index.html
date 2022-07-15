@@ -19,7 +19,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
       <title>DocBot</title>
-      <a rel="icon" type="image/gif/png" href="{{url_for('static', filename='AICampLogo.png')}}" alt="..." />
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon-16x16.png')}}" alt="..." />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -28,12 +28,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     </head>
-          <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" id="mainNav" style="border-style: solid; background-color: #382C28;
-            border-color: #382C28; border-radius: 25px; width: 80%; margin: auto; justify-content: center;
-  align-items: center; top:2%;">
+            border-color: #382C28; border-radius: 25px; width: 80%; margin: auto; justify-content: center; align-items: center; top:2%;">
             <div class="container">
                 <a class="navbar-brand" href="#page-top"><img src="{{url_for('static', filename='assets/img/VaLogo.png') }}" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"  color=#D4D2D5>
@@ -59,7 +57,7 @@
           <div style="position:relative; top:-35px;">
                 <div class="masthead-subheading" style="text-align:center; color:#382C28">Enter your question below!</div>
               <form id="botForm" action="{{get_text}}" method="post">
-                <input type="text"  id="prompt" class="btn btn-primary btn-xl" name="prompt" style="background-color: #ebebeb; border-color: #382C28; border-radius: 25px; border-style: solid; text-align:start; color:#382C28;">
+                <input type="text" value="{{prompt}}" placeholder="I have a headache..." id="prompt" class="btn btn-primary btn-xl" name="prompt" style="background-color: #ebebeb; border-color: #382C28; border-radius: 25px; border-style: solid; text-align:start; color:#382C28;">
                   <br><br>
                 <input type="submit" class="btn btn-primary btn-xl text-uppercase" style="background-color: #BA3F1D; color:#382C28; border-color: #BFAFA6;" value="Submit Question">
                 </form>
@@ -110,7 +108,7 @@
                             <i class="fas fa-heart-pulse fa-stack-1x fa-inverse"  style="color: #BA3F1D"></i>
                         </span>
                         <h4 class="my-3">What Are the Benefits of The DocBot?</h4>
-                        <p class="text-muted">The DocBot grants its users with a vast amount of benefits.For example, The DocBot provides an output containing information regarding what the possibilities of the input could be along with when it is necessary to involve professional medical care. Another Example would be how, in the case of a common cold, The DocBot's advice will not only be helpful for the user, but it will help avoid users from a vast payment to the medical center when faced with a conflict that is not severe. </p>
+                        <p class="text-muted">The DocBot grants its users with a vast amount of benefits.For example, The DocBot provides an output containing information regarding what the possibilities of the input could be along with when it is necessary to involve professional medical care. </p>
                     </div>
                 </div>
             </div>
@@ -194,7 +192,7 @@
                                 <h4>Day 5</h4>
                                 <h4 class="subheading">Finalized Project Idea</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">While learning the basics of Python, we brainstormed ideas for an artificial intelligence text generation tool. Originally we had considered making a fake news generator, a meme generator, an email writer, or a holiday card generator, but eventually we settled on our idea, a medical diagnosis and resource locator bot.</p></div>
+                            <div class="timeline-body"><p class="text-muted">While learning the basics of Python, we brainstormed ideas for an artificial intelligence text generation tool. Originally we had considered making a fake news generator, a meme generator, an email writer, or a holiday card generator, but eventually we settled on our idea, a medical diagnosis bot.</p></div>
                         </div>
                     </li>
                     <li>
@@ -214,7 +212,7 @@
                                 <h4>Day 11</h4>
                                 <h4 class="subheading">Began Web Design</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Now that we had a functional demo, we needed to present it. We learned how to use HTML, and found a template for our website on startbootstrap.com, and from this template we began learning front-end and back-end design and put it together so that we could how our</p></div>
+                            <div class="timeline-body"><p class="text-muted">Now that we had a functional demo, we needed to present it. We learned how to use HTML, and found a template for our website on startbootstrap.com, and from this template we began learning front-end and back-end design so that we oculd put it together and get an idea of how our final product would look.</p></div>
                         </div>
                     </li>
                     <li>
@@ -325,7 +323,7 @@ src="{{url_for('static', filename='Team_Pics/Teddy.png')}}" alt="..." />
                                   <br>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1" style="color: #382C28" ></i>
-                                        Close Project
+                                        Close
                                     </button>
                                 </div>
                             </div>
@@ -346,10 +344,11 @@ src="{{url_for('static', filename='Team_Pics/Teddy.png')}}" alt="..." />
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Training Our Model</h2>
                                     <p class="item-intro text-muted">teaching our GPT-2 Model</p>
-                                    <p>Using our pre-processed dataset and feeding the information to our AI model we waited for it to generate its own text from a user's question. Although it may be a simpler model, the GPT-2 "124M" model processed our data in a short time frame allowing us to begin working on our website. To further improve our model, we choose to fine tune a GPT-3 AI model. This model includes more parameters for the AI to learn from as well as a larger variety of stored topics to help our DocBot.</p>
+                                    <p>Using our pre-processed dataset and feeding the information to our AI model we waited for it to generate its own text from a user's question. Although it may be a simpler model, the GPT-2 "124M" model processed our data in a short time frame allowing us to begin working on our website. To further improve our model, we choose to fine tune a GPT-3 AI model. This model includes more parameters for the AI to learn from as well as a larger variety of stored topics to help our DocBot. <br>
+Gpt-3 is the third generation "Generated Pre-trained Transformer", and is a neural network machine learning model which uses internet data to generate text.</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1" style="color: #382C28; border-color: #382C28; background-color: #382C28"></i>
-                                        Close Project
+                                        <i class="fas fa-xmark me-1" style="color: #382C28;"></i>
+                                        Close
                                     </button>
                                 </div>
                             </div>
@@ -373,7 +372,7 @@ src="{{url_for('static', filename='Team_Pics/Teddy.png')}}" alt="..." />
                                     <p>We created our website with HTML and included specific styling with CSS. This would be the front-end of the website. To incorporate our trained AI model into a user friendly The DocBot we used Flask and a series of its libraries. With a bit of JavaScript as well, The DocBot was fully ready for use.</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1" style="color: #382C28"></i>
-                                        Close Project
+                                        Close
                                     </button>
                                 </div>
                             </div>
